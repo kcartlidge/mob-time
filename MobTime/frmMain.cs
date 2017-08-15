@@ -11,7 +11,8 @@ namespace MobTime
         {
             Stopped,
             Running,
-            Paused
+            Paused,
+            Closing
         }
 
         private States State = States.Stopped;
@@ -158,6 +159,25 @@ namespace MobTime
         private void ChangeDirection(object sender, EventArgs e)
         {
             UpdateElapsed();
+        }
+
+        private void FormActivated(object sender, EventArgs e)
+        {
+            this.Opacity = 1;
+        }
+
+        private void FormDeactivated(object sender, EventArgs e)
+        {
+            if (State == States.Closing)
+            {
+                return;
+            }
+            this.Opacity = 0.5;
+        }
+
+        private void ClosingForm(object sender, FormClosingEventArgs e)
+        {
+            State = States.Closing;
         }
     }
 }

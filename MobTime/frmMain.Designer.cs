@@ -368,6 +368,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mob Time (10 minutes)";
             this.TopMost = true;
+            this.Activated += new System.EventHandler(this.FormActivated);
+            this.Deactivate += new System.EventHandler(this.FormDeactivated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClosingForm);
             this.toolMain.ResumeLayout(false);
             this.toolMain.PerformLayout();
             this.ResumeLayout(false);
