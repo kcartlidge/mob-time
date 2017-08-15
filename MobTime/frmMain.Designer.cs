@@ -81,8 +81,10 @@
             this.toolMain.Name = "toolMain";
             this.toolMain.Padding = new System.Windows.Forms.Padding(4, 0, 1, 0);
             this.toolMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolMain.Size = new System.Drawing.Size(196, 25);
+            this.toolMain.ShowItemToolTips = false;
+            this.toolMain.Size = new System.Drawing.Size(162, 25);
             this.toolMain.TabIndex = 0;
+            this.toolMain.MouseEnter += new System.EventHandler(this.FormBright);
             // 
             // mnuStart
             // 
@@ -345,16 +347,17 @@
             this.lblTimer.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.Location = new System.Drawing.Point(0, 30);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(196, 48);
+            this.lblTimer.Size = new System.Drawing.Size(162, 48);
             this.lblTimer.TabIndex = 1;
             this.lblTimer.Text = "00:00";
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTimer.MouseEnter += new System.EventHandler(this.FormBright);
             // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(196, 78);
+            this.ClientSize = new System.Drawing.Size(162, 78);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.toolMain);
             this.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -366,11 +369,12 @@
             this.Name = "frmMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mob Time (10 minutes)";
+            this.Text = "Mob Time";
             this.TopMost = true;
             this.Activated += new System.EventHandler(this.FormActivated);
             this.Deactivate += new System.EventHandler(this.FormDeactivated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClosingForm);
+            this.MouseEnter += new System.EventHandler(this.FormBright);
             this.toolMain.ResumeLayout(false);
             this.toolMain.PerformLayout();
             this.ResumeLayout(false);
