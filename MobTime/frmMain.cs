@@ -90,7 +90,7 @@ namespace MobTime
             lblTimer.Text = $"{mins:D2}:{secs:D2}";
             if (State == States.Stopped)
             {
-                lblTimer.ForeColor = Color.Gray;
+                lblTimer.ForeColor = Color.Black;
             }
             else
             {
