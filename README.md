@@ -10,3 +10,10 @@ Windows desktop mobbing/meeting timer.
 * Runs in a compact window to reduce screen wastage.
 * Fades out when you switch your focus elsewhere.
 * Automatically regains focus as required.
+
+---
+
+![Screenshot with time remaining](screenshot1.png)
+![Screenshot overdue](screenshot2.png)
+
+---
