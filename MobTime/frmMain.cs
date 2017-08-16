@@ -58,7 +58,12 @@ namespace MobTime
             }
 
             // Check whether the saved duration is a valid one.
-            Options = Config.Load(new Options { CountUpwards = false, Duration = 10 });
+            Options = Config.Load(new Options
+            {
+                CountUpwards = false,
+                Duration = 10,
+                DimOnLeave = true,
+            });
             var ok = false;
             foreach (var itemObj in mnuMinutes.DropDownItems)
             {
@@ -218,6 +223,16 @@ namespace MobTime
         }
 
         /// <summary>
+        /// The dim-on-leave option has been changed.
+        /// </summary>
+        private void ChangeDimBehaviour(object sender, EventArgs e)
+        {
+            Options.DimOnLeave = !Options.DimOnLeave;
+            SaveOptions();
+            UpdateElapsed();
+        }
+
+        /// <summary>
         /// The form has gained focus.
         /// </summary>
         private void FormActivated(object sender, EventArgs e)
@@ -259,7 +274,10 @@ namespace MobTime
         /// </summary>
         private void FormDim(object sender, EventArgs e)
         {
-            this.Opacity = 0.5;
+            if (Options.DimOnLeave)
+            {
+                this.Opacity = 0.5;
+            }
         }
 
         /// <summary>
@@ -268,8 +286,10 @@ namespace MobTime
         private void SaveOptions()
         {
             Config.Save(Options);
-            var direction = Options.CountUpwards ? "Down" : "Up";
+            var direction = Options.CountUpwards ? "down" : "up";
             directionToolStripMenuItem.Text = "Count &" + direction;
+            var dim = Options.DimOnLeave ? "Don't dim" : "Dim";
+            dimIfInactiveToolStripMenuItem.Text = dim + " &inactive";
             Application.DoEvents();
         }
     }

@@ -148,5 +148,24 @@ namespace MobTime.Ini
             }
             return defaultValue;
         }
+
+        /// <summary>
+        /// Retrieve the boolean value of a setting by section and key (case-insensitive).
+        /// </summary>
+        /// <param name="iniValues">The values obtained from a call to Load.</param>
+        /// <returns>Either a Setting object or the default value if not found.</returns>
+        public static bool GetSetting(SortedList<string, Section> iniValues, string section, string key, bool defaultValue)
+        {
+            var setting = GetSetting(iniValues, section, key);
+            if (setting == null)
+            {
+                return defaultValue;
+            }
+            if (bool.TryParse(setting.Value, out bool result))
+            {
+                return result;
+            }
+            return defaultValue;
+        }
     }
 }

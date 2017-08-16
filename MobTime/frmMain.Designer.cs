@@ -59,6 +59,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAbout = new System.Windows.Forms.ToolStripButton();
             this.lblTimer = new System.Windows.Forms.Label();
+            this.dimIfInactiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,6 +137,7 @@
             this.mnuMinutes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.mnuMinutes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.directionToolStripMenuItem,
+            this.dimIfInactiveToolStripMenuItem,
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
@@ -164,25 +166,22 @@
             // 
             // directionToolStripMenuItem
             // 
-            this.directionToolStripMenuItem.Checked = true;
-            this.directionToolStripMenuItem.CheckOnClick = true;
-            this.directionToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.directionToolStripMenuItem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.directionToolStripMenuItem.Name = "directionToolStripMenuItem";
-            this.directionToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.directionToolStripMenuItem.Text = "Count &Up";
+            this.directionToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.directionToolStripMenuItem.Text = "Count &upward";
             this.directionToolStripMenuItem.Click += new System.EventHandler(this.ChangeDirection);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(185, 6);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem2.Text = "1 minute";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -190,7 +189,7 @@
             // 
             this.toolStripMenuItem3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem3.Text = "2 minutes";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -198,7 +197,7 @@
             // 
             this.toolStripMenuItem4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem4.Text = "3 minutes";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -206,7 +205,7 @@
             // 
             this.toolStripMenuItem5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem5.Text = "4 minutes";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -214,7 +213,7 @@
             // 
             this.toolStripMenuItem6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem6.Text = "5 minutes";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -222,7 +221,7 @@
             // 
             this.toolStripMenuItem7.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem7.Text = "6 minutes";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -230,7 +229,7 @@
             // 
             this.toolStripMenuItem8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem8.Text = "7 minutes";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -238,7 +237,7 @@
             // 
             this.toolStripMenuItem9.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem9.Text = "8 minutes";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -246,7 +245,7 @@
             // 
             this.toolStripMenuItem10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem10.Text = "9 minutes";
             this.toolStripMenuItem10.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -254,7 +253,7 @@
             // 
             this.toolStripMenuItem11.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem11.Text = "10 minutes";
             this.toolStripMenuItem11.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -262,7 +261,7 @@
             // 
             this.toolStripMenuItem13.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem13.Text = "15 minutes";
             this.toolStripMenuItem13.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -270,7 +269,7 @@
             // 
             this.toolStripMenuItem14.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem14.Text = "20 minutes";
             this.toolStripMenuItem14.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -278,7 +277,7 @@
             // 
             this.toolStripMenuItem15.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-            this.toolStripMenuItem15.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem15.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem15.Text = "25 minutes";
             this.toolStripMenuItem15.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -286,7 +285,7 @@
             // 
             this.toolStripMenuItem16.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem16.Name = "toolStripMenuItem16";
-            this.toolStripMenuItem16.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem16.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem16.Text = "30 minutes";
             this.toolStripMenuItem16.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -294,7 +293,7 @@
             // 
             this.toolStripMenuItem17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem17.Name = "toolStripMenuItem17";
-            this.toolStripMenuItem17.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem17.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem17.Text = "45 minutes";
             this.toolStripMenuItem17.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -302,7 +301,7 @@
             // 
             this.toolStripMenuItem18.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem18.Text = "60 minutes";
             this.toolStripMenuItem18.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -310,7 +309,7 @@
             // 
             this.toolStripMenuItem19.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem19.Name = "toolStripMenuItem19";
-            this.toolStripMenuItem19.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem19.Size = new System.Drawing.Size(188, 26);
             this.toolStripMenuItem19.Text = "90 minutes";
             this.toolStripMenuItem19.Click += new System.EventHandler(this.ChooseMinutes);
             // 
@@ -352,6 +351,14 @@
             this.lblTimer.Text = "00:00";
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTimer.MouseEnter += new System.EventHandler(this.FormBright);
+            // 
+            // dimIfInactiveToolStripMenuItem
+            // 
+            this.dimIfInactiveToolStripMenuItem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dimIfInactiveToolStripMenuItem.Name = "dimIfInactiveToolStripMenuItem";
+            this.dimIfInactiveToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.dimIfInactiveToolStripMenuItem.Text = "&Dim if inactive";
+            this.dimIfInactiveToolStripMenuItem.Click += new System.EventHandler(this.ChangeDimBehaviour);
             // 
             // frmMain
             // 
@@ -414,6 +421,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton mnuPeople;
+        private System.Windows.Forms.ToolStripMenuItem dimIfInactiveToolStripMenuItem;
     }
 }
 
