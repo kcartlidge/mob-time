@@ -32,7 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>1380_wall_clockFINAL.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -85,15 +86,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="1380_wall_clockFINAL.ico" />
-    <Content Include="Icons\AdvancedBreakpointDisabled_6589_32x.png" />
+    <Content Include="Icons\1380_wall_clockFINAL.ico" />
+    <Content Include="Icons\Help\StatusAnnotations_Help_and_inconclusive_16xLG.png" />
+    <Content Include="Icons\Help\StatusAnnotations_Help_and_inconclusive_32xLG.png" />
+    <Content Include="Icons\Minutes\Step_16xLG.png" />
+    <Content Include="Icons\Minutes\Step_32xLG.png" />
+    <Content Include="Icons\Pause\StatusAnnotations_Pause_16xLG.png" />
+    <Content Include="Icons\Pause\StatusAnnotations_Pause_32xLG.png" />
+    <Content Include="Icons\People\user_16xLG.png" />
+    <Content Include="Icons\People\user_32xLG.png" />
+    <Content Include="Icons\Play\StatusAnnotations_Play_16xLG_color.png" />
+    <Content Include="Icons\Play\StatusAnnotations_Play_32xLG_color.png" />
     <Content Include="Icons\source.txt" />
-    <Content Include="Icons\StatusAnnotations_Critical_32xLG_color.png" />
-    <Content Include="Icons\StatusAnnotations_Help_and_inconclusive_32xLG_color.png" />
-    <Content Include="Icons\StatusAnnotations_Information_32xLG_color.png" />
-    <Content Include="Icons\StatusAnnotations_Pause_32xLG_color.png" />
-    <Content Include="Icons\StatusAnnotations_Play_32xLG_color.png" />
-    <Content Include="Icons\StatusAnnotations_Required_32xLG.png" />
+    <Content Include="Icons\Stop\StatusAnnotations_Critical_16xLG_color.png" />
+    <Content Include="Icons\Stop\StatusAnnotations_Critical_32xLG_color.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

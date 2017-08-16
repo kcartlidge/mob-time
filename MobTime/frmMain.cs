@@ -19,14 +19,14 @@ namespace MobTime
         }
 
         /// <summary>
+        /// All configuration options.
+        /// </summary>
+        private Options Options;
+
+        /// <summary>
         /// Current state of the form/stopwatch.
         /// </summary>
         private States State = States.Stopped;
-
-        /// <summary>
-        /// Stopwatch target in minutes.
-        /// </summary>
-        private int Duration = 10;
 
         /// <summary>
         /// Runs to provide regular UI updates.
@@ -58,7 +58,7 @@ namespace MobTime
             }
 
             // Check whether the saved duration is a valid one.
-            Duration = Config.Load(Duration);
+            Options = Config.Load(new Options { CountUpwards = false, Duration = 10 });
             var ok = false;
             foreach (var itemObj in mnuMinutes.DropDownItems)
             {
@@ -74,7 +74,7 @@ namespace MobTime
                         if (int.TryParse(minsText, out int mins))
                         {
                             // If it is, and it matches the saved value, use it.
-                            if (mins == Duration)
+                            if (mins == Options.Duration)
                             {
                                 ok = true;
                                 ChooseMinutes(itemObj, null);
@@ -88,9 +88,9 @@ namespace MobTime
             // Default for where there is no usable saved value.
             if (!ok)
             {
-                Duration = 10;
+                Options.Duration = 10;
             }
-            Config.Save(Duration);
+            SaveOptions();
 
             // Set up the UI update timer and the stopwatch.
             CounterStopwatch = new Stopwatch();
@@ -106,14 +106,14 @@ namespace MobTime
         private void UpdateElapsed()
         {
             // Calculate the basics of time passed.
-            var over = CounterStopwatch.Elapsed.TotalMinutes > Duration;
+            var over = CounterStopwatch.Elapsed.TotalMinutes > Options.Duration;
             var mins = CounterStopwatch.Elapsed.Minutes;
             var secs = CounterStopwatch.Elapsed.Seconds;
 
             // If enough time elapsed or counting down selected, switch to time remaining.
-            if (!(directionToolStripMenuItem.Checked || over))
+            if (!(Options.CountUpwards || over))
             {
-                var expected = Duration * 60;
+                var expected = Options.Duration * 60;
                 var elapsedSeconds = CounterStopwatch.Elapsed.TotalSeconds;
                 var remains = expected - Convert.ToInt32(elapsedSeconds);
                 mins = remains / 60;
@@ -140,9 +140,9 @@ namespace MobTime
         {
             var item = (ToolStripMenuItem)sender;
             var minsText = item.Text.Split(" ".ToCharArray(), 2)[0];
-            Duration = int.Parse(minsText);
+            Options.Duration = int.Parse(minsText);
             Text = $"{item.Text}";
-            Config.Save(Duration);
+            SaveOptions();
         }
 
         /// <summary>
@@ -212,6 +212,8 @@ namespace MobTime
         /// </summary>
         private void ChangeDirection(object sender, EventArgs e)
         {
+            Options.CountUpwards = !Options.CountUpwards;
+            SaveOptions();
             UpdateElapsed();
         }
 
@@ -258,6 +260,17 @@ namespace MobTime
         private void FormDim(object sender, EventArgs e)
         {
             this.Opacity = 0.5;
+        }
+
+        /// <summary>
+        /// Stores the current options and updates any related UI.
+        /// </summary>
+        private void SaveOptions()
+        {
+            Config.Save(Options);
+            var direction = Options.CountUpwards ? "Down" : "Up";
+            directionToolStripMenuItem.Text = "Count &" + direction;
+            Application.DoEvents();
         }
     }
 }
