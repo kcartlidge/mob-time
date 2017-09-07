@@ -59,7 +59,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAbout = new System.Windows.Forms.ToolStripButton();
             this.lblTimer = new System.Windows.Forms.Label();
-            this.dimIfInactiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +84,6 @@
             this.toolMain.ShowItemToolTips = false;
             this.toolMain.Size = new System.Drawing.Size(162, 25);
             this.toolMain.TabIndex = 0;
-            this.toolMain.MouseEnter += new System.EventHandler(this.FormBright);
             // 
             // mnuStart
             // 
@@ -137,7 +135,6 @@
             this.mnuMinutes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.mnuMinutes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.directionToolStripMenuItem,
-            this.dimIfInactiveToolStripMenuItem,
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
@@ -350,15 +347,6 @@
             this.lblTimer.TabIndex = 1;
             this.lblTimer.Text = "00:00";
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTimer.MouseEnter += new System.EventHandler(this.FormBright);
-            // 
-            // dimIfInactiveToolStripMenuItem
-            // 
-            this.dimIfInactiveToolStripMenuItem.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dimIfInactiveToolStripMenuItem.Name = "dimIfInactiveToolStripMenuItem";
-            this.dimIfInactiveToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
-            this.dimIfInactiveToolStripMenuItem.Text = "&Dim if inactive";
-            this.dimIfInactiveToolStripMenuItem.Click += new System.EventHandler(this.ChangeDimBehaviour);
             // 
             // frmMain
             // 
@@ -378,10 +366,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mob Time";
             this.TopMost = true;
-            this.Activated += new System.EventHandler(this.FormActivated);
-            this.Deactivate += new System.EventHandler(this.FormDeactivated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClosingForm);
-            this.MouseEnter += new System.EventHandler(this.FormBright);
             this.toolMain.ResumeLayout(false);
             this.toolMain.PerformLayout();
             this.ResumeLayout(false);
@@ -421,7 +406,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton mnuPeople;
-        private System.Windows.Forms.ToolStripMenuItem dimIfInactiveToolStripMenuItem;
     }
 }
 

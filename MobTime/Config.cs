@@ -9,7 +9,6 @@ namespace MobTime
     {
         public bool CountUpwards;
         public int Duration;
-        public bool DimOnLeave;
     }
 
     static class Config
@@ -27,10 +26,6 @@ namespace MobTime
             ini.AppendLine("[COUNTER]");
             ini.AppendLine("Upwards = " + options.CountUpwards.ToString());
             ini.AppendLine("Minutes = " + options.Duration.ToString());
-            ini.AppendLine("");
-            ini.AppendLine("[DISPLAY]");
-            ini.AppendLine("# should Mob Time dim when it is not the active window?");
-            ini.AppendLine("Dim = " + options.DimOnLeave.ToString());
             try
             {
                 File.WriteAllText(fullpath, ini.ToString());
@@ -51,7 +46,6 @@ namespace MobTime
                 var values = Ini.File.Load(fullpath);
                 options.CountUpwards = Ini.File.GetSetting(values, "COUNTER", "UPWARDS", defaults.CountUpwards);
                 options.Duration = Ini.File.GetSetting(values, "COUNTER", "MINUTES", defaults.Duration);
-                options.DimOnLeave = Ini.File.GetSetting(values, "DISPLAY", "DIM", defaults.DimOnLeave);
             }
             catch (Exception ex)
             {

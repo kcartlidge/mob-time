@@ -62,7 +62,6 @@ namespace MobTime
             {
                 CountUpwards = false,
                 Duration = 10,
-                DimOnLeave = true,
             });
             var ok = false;
             foreach (var itemObj in mnuMinutes.DropDownItems)
@@ -209,7 +208,8 @@ namespace MobTime
         /// </summary>
         private void About(object sender, EventArgs e)
         {
-            MessageBox.Show("Copyright K Cartlidge, 2017.", "Mob Time", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var f = new frmAbout();
+            f.ShowDialog();
         }
 
         /// <summary>
@@ -223,60 +223,17 @@ namespace MobTime
         }
 
         /// <summary>
-        /// The dim-on-leave option has been changed.
-        /// </summary>
-        private void ChangeDimBehaviour(object sender, EventArgs e)
-        {
-            Options.DimOnLeave = !Options.DimOnLeave;
-            SaveOptions();
-            UpdateElapsed();
-        }
-
-        /// <summary>
-        /// The form has gained focus.
-        /// </summary>
-        private void FormActivated(object sender, EventArgs e)
-        {
-            FormBright(sender, e);
-        }
-
-        /// <summary>
-        /// The form has lost focus.
-        /// </summary>
-        private void FormDeactivated(object sender, EventArgs e)
-        {
-            if (State == States.Closing)
-            {
-                return;
-            }
-            FormDim(sender, e);
-        }
-
-        /// <summary>
         /// The form is now being closed.
         /// </summary>
         private void ClosingForm(object sender, FormClosingEventArgs e)
         {
-            State = States.Closing;
-        }
-
-        /// <summary>
-        /// Set the form to full opacity.
-        /// </summary>
-        private void FormBright(object sender, EventArgs e)
-        {
-            this.Opacity = 1;
-            this.Focus();
-        }
-
-        /// <summary>
-        /// Lower the form opacity.
-        /// </summary>
-        private void FormDim(object sender, EventArgs e)
-        {
-            if (Options.DimOnLeave)
+            if (MessageBox.Show("Close the timer?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                this.Opacity = 0.5;
+                State = States.Closing;
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
 
@@ -288,8 +245,6 @@ namespace MobTime
             Config.Save(Options);
             var direction = Options.CountUpwards ? "down" : "up";
             directionToolStripMenuItem.Text = "Count &" + direction;
-            var dim = Options.DimOnLeave ? "Don't dim" : "Dim";
-            dimIfInactiveToolStripMenuItem.Text = dim + " &inactive";
             Application.DoEvents();
         }
     }
